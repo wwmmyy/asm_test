@@ -10,10 +10,15 @@ include irvine32.inc;先引入类型定义,相当于c的头文件
 
 .code
 main proc
-	 mov esi,offset arr
-	 mov ecx,lengthof arr
-	 mov ebx,type dword
-	 call DumpMem
+    ;按位与
+	 mov al,0ffh
+	 and al,11111001b;11111001b
+     mov al,01010101b
+	 or  al,01101001b;01111101b
+     mov al,01010101b
+	 not al;10101010b;
+     mov al,01010101b
+	 xor al,10101010b;11111111b;
 	invoke ExitProcess, 0
 main endp
  
